@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}{{article.article_title}}{% endblock %}
+
+{% block content %}
+	
+<h2>{{article.article_title}}</h2>
+<p>{{article.article_text}}</p>
+<em>{{article.pub_date}}</em>
+
+<hr>
+
+<table style="border: 2px solid red">
+	<caption>Comments</caption>
+	<tr>
+		<td>Author</td><td>Comment</td>
+	</tr>
+	{% for c in comments %}
+		<tr>
+			<td>{{c.author_name}}</td><td>{{c.comment_text}}</td>
+		</tr>
+	{% endfor %}
+</table>
+
+<form action="{% url 'articles:leaveComment' article.id %}" method="POST">
+	{% csrf_token %}
+	<input type="text" required placeholder="Name" name="name"><br>
+	<textarea name="text"  required="" placeholder="Text" cols="30" rows="10"></textarea><br>
+	<button type="submit">Submit</button>
+
+</form>
+
+{% endblock %}
