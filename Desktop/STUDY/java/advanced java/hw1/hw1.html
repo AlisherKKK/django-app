@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>HW1</title>
+	<link rel="stylesheet" href="">
+	<style type="text/css">
+		button:hover{
+			background-color: LightGreen;
+		}
+		button{
+			border-radius: 50%;
+			border-color: DarkCyan;
+		}
+	</style>
+</head>
+<body>
+	<div style=" background-color: LightSeaGreen">
+		<div style="width: 15%;">
+			<label>X: <input id="n1" type="number" ></label><br>
+			<label>Y: <input id="n2" style="margin: 2px;" type="number"></label>
+		</div>
+		<div style="margin-left: 2%">
+			<button onclick="document.getElementById('res').value = parseFloat(document.getElementById('n1').value)+parseFloat(document.getElementById('n2').value)">+</button>
+			<button onclick="document.getElementById('res').value = parseFloat(document.getElementById('n1').value)-parseFloat(document.getElementById('n2').value)">-</button>
+			<button onclick="document.getElementById('res').value = parseFloat(document.getElementById('n1').value)/parseFloat(document.getElementById('n2').value)">*</button>
+			<button onclick="document.getElementById('res').value = parseFloat(document.getElementById('n1').value)*parseFloat(document.getElementById('n2').value)">/</button>
+		</div>
+		<div style="width: 15%;">
+			<label>Answer: <input id="res" type="number" ></label><br>
+		</div>
+	</div>
+</body>
+</html>
